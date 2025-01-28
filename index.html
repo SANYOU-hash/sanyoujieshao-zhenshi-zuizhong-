@@ -93,37 +93,14 @@
         }
 
         #twitch-embed {
-            width: 75%; /* 增大直播画面宽度 */
-            height: 800px; /* 增大直播画面高度 */
+            width: 75%;   /* 增大直播画面宽度 */
+            height: 800px;  /* 增大直播画面高度 */
             cursor: pointer;
         }
 
         #chat-embed {
-            width: 23%; /* 保持聊天框宽度不变 */
+            width: 23%;   /* 保持聊天框宽度不变 */
             height: 500px; /* 保持聊天框高度不变 */
-        }
-
-        .overlay-message {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            cursor: pointer;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0s, opacity 0.5s linear;
-        }
-
-        .live-stream-container:hover .overlay-message {
-            visibility: visible;
-            opacity: 1;
         }
     </style>
 </head>
@@ -184,15 +161,12 @@
                 <div id="twitch-embed"></div>
 
                 <!-- Twitch聊天框（右侧） -->
-                <iframe id="chat-embed"
-                        src="https://www.twitch.tv/embed/sysanyou/chat?parent=sytwsysanyou123.xin"
-                        height="500"
-                        width="350">
+                <iframe
+                    id="chat-embed"
+                    src="https://www.twitch.tv/embed/sysanyou/chat?parent=sytwsysanyou123.xin"
+                    height="500"
+                    width="350">
                 </iframe>
-
-                <div class="overlay-message">
-                    如果直接显示不了请点击画面跳转到指定网站观看
-                </div>
             </div>
         </section>
     </div>
@@ -207,7 +181,7 @@
     <!-- 创建Twitch播放器对象，嵌入到指定的div中 -->
     <script type="text/javascript">
         // JavaScript部分：使用Twitch.Player动态嵌入
-        window.onload = function () {
+        window.onload = function() {
             new Twitch.Player("twitch-embed", {
                 channel: "sysanyou"  // 这里是你要显示的Twitch频道，修改为sysanyou
             });
@@ -216,5 +190,3 @@
 
 </body>
 </html>
-
-
